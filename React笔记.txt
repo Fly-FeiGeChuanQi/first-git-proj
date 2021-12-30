@@ -1,3 +1,4 @@
+branch
 1.react始终刷新页面，不用关注细节
 2.flux架构，单项数据流，ui绑定在storm，store改变则刷新ui
 
