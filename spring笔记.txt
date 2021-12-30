@@ -1,0 +1,24 @@
+1. GET 请求获取参数的三种方式：@GetMapping, @RequestMapping
+   1.1. url: /root/{id}/met      @PathVariable
+   1.2. url: /root/met?id=123    @RequestParam
+   1.3. url: /root/met?id=123    HttpServletRequest
+2. spring注册bean的几种方式：
+	2.1 xml配置
+	2.2	注解：
+		2.2.1 常规（通过扫描的方式）：Controller,Service,Component,Responstry,Resource
+		《以下是通过@Configuration配置类注入》
+		2.2.2 插件注解，@EnablePluginRegistries({DocumentationPlugin.class, ApiListingBuilderPlugin.class, OperationBuilderPlugin.class})
+				2.2.2.1 导入依赖：
+					<dependency>
+					   <groupId>org.springframework.plugin</groupId>
+					   <artifactId>spring-plugin-core</artifactId>
+					</dependency>
+				2.2.2.2 编写自己的插件（就是一个bean, 通过插件的流程注册），继承或实现plugin接口
+				2.2.2.3 配置类上加注解@EnablePluginRegistries({编写的插件.class})
+				2.2.2.4 注册流程 
+		2.2.3. import注入:	Import注册的bean，name默认为类名全路径；通过Configuration配置类import注入，即：@Import({自定义bean.class})
+			ImportSelector(DeferredImportSelector)，
+		2.2.4. import配合ImportSelector注入:	自定义bean, 定义配置类 ConfigurationImportSelector implements ImportSelector，重写方法selectImports，return 		String[]{自定义bean的全路径名}，通过Configuration配置类import注入
+			即：@Import({ConfigurationImportSelector.class}) 实现自定义bean的注入
+		2.2.5. import配合DeferredImportSelector注入:  所有的@Configuration处理完再导入实现DeferredImportSelector接口定义的bean	
+		2.2.6. 实现ImportBeanDefinitionRegistrar 接口，重写registerBeanDefinitions方法，实现bean定义的注册

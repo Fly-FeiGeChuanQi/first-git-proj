@@ -1,0 +1,40 @@
+1.react始终刷新页面，不用关注细节
+2.flux架构，单项数据流，ui绑定在storm，store改变则刷新ui
+
+1.为什么用react:
+	1.1.传统架构：html/css/js，需要些大量Document.get***,代码繁杂
+	1.2.效率低，需要浏览器经常性刷新重拍面板布局
+	1.3.react采用声明式编码，具体操作由react框架完成，开发人员不用关注细节
+	1.4.flux架构，单项数据流，ui绑定在storm，store改变则刷新ui
+	1.5.在react native中可以使用react语法进行移动端开发
+	1.6.虚拟dom，可避免真实dom的重复渲染
+	1.7.
+2. js网址：
+	https://react.docschina.org/tutorial/tutorial.html
+3. js下载
+	https://cdn.staticfile.org/react/16.4.0/umd/react.development.js
+	https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js
+	https://cdn.staticfile.org/babel-standalone/6.26.0/babel.js
+	引入顺序：先引入react.development.js，react-dom.development.js  后引入babel.js
+4. 通过npm创建react项目
+	4.1：win+R 输入cmd ，打开cmd面板
+	4.2：安装cnpm 
+	　　npm install -g cnpm --registry=https://registry.npm.taobao.org
+	4.3：安装react的构建器create-react-app
+	　　 cnpm install -g create-react-app
+	4.4：create-react-app my-test      //my-test为项目名称，可自定义
+	4.5：cd my-test
+	4.6： cnpm install --save redux //安装redux
+	4.7: cnpm install --save redux-saga  //saga第三方插件
+	4.8 ： cnpm install axios   //axois安装（异步请求）
+	4.9 : cnpm install antd --save  //组件安装
+	4.10：cnpm install immutable   //immutable   安装
+	4.11 ： cnpm install react-redux --save  
+5. 虚拟dom创建的两种方式：
+6. 查看node.js全局安装路径：npm config list
+7. 查看版本： npm view 构建包名称 version
+8. 安装指定版本构建包： npm install 构建包名称@版本
+9. react-router-dom6.2.1没有Redirect,等构建， 版本5.2.0存在
+10. js数组key重复，若向数组前插入数据会导致构建值丢失，错乱
+11. js模板字符串可嵌入表达式${}
+
