@@ -22,3 +22,5 @@
 			即：@Import({ConfigurationImportSelector.class}) 实现自定义bean的注入
 		2.2.5. import配合DeferredImportSelector注入:  所有的@Configuration处理完再导入实现DeferredImportSelector接口定义的bean	
 		2.2.6. 实现ImportBeanDefinitionRegistrar 接口，重写registerBeanDefinitions方法，实现bean定义的注册
+		
+		
